@@ -1,0 +1,14 @@
+--------------------------------------------------------------------------------------------------------------
+Tambah data Admin
+--------------------------------------------------------------------------------------------------------------
+Ketik di terminal: php artisan tinker
+
+Setelah masuk ke Tinker (muncul awalan >), paste kode ini lalu tekan Enter:
+
+PHP
+$user = new App\Models\User();
+$user->name = 'Ketua Karang Taruna';
+$user->email = 'admin@cemani.rt03';
+$user->password = bcrypt('rahasia123');
+$user->save();
+Ketik exit lalu Enter untuk keluar dari Tinker.
