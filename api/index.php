@@ -30,7 +30,6 @@ try {
     );
 
     $response->send();
-
     $kernel->terminate($request, $response);
 
 } catch (\Throwable $e) {
