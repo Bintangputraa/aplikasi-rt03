@@ -17,7 +17,7 @@ class BeritaController extends Controller
     public function index()
     {
         $berita = Berita::orderBy('created_at', 'desc')->get();
-        return view('admin.berita.index', compact('berita'));
+        return response()->json($berita);
     }
 
     public function create()
