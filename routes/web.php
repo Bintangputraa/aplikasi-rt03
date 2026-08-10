@@ -23,7 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // 2. Rute untuk mengelola Berita / Lelayu RT 03
-    Route::get('/admin/berita', [BeritaController::class, 'index'])->name('berita.index');
+    Route::get('/api/berita', function() {
+        $Berita = Berita::orderBy('created_at', 'desc' )->get();
+        return response()->json($Berita);
+    })
     Route::get('/admin/berita/tambah', [BeritaController::class, 'create'])->name('berita.create');
     Route::post('/admin/berita', [BeritaController::class, 'store'])->name('berita.store');
     Route::get('/api/album', [AlbumController::class, 'index']);

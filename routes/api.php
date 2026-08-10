@@ -10,10 +10,10 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 // Rute khusus untuk melayani permintaan dari aplikasi Android Warga
-Route::get('/berita', function () {
-    $berita = Berita::orderBy('created_at', 'desc')->get();
-    return response()->json($berita)
-});
+//Route::get('/berita', function () {
+    //$berita = Berita::orderBy('created_at', 'desc')->get();
+    //return response()->json($berita)
+//});
 Route::get('/kegiatan', [AdminKegiatanController::class, 'index']);
 Route::get('/album', [AlbumController::class, 'index']);
 Route::get('/album/{id}/media', [GaleriController::class, 'getMediaByAlbum']);
