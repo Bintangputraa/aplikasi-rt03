@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/berita/tambah', [BeritaController::class, 'create'])->name('berita.create');
     Route::post('/admin/berita', [BeritaController::class, 'store'])->name('berita.store');
     Route::get('/api/album', [AlbumController::class, 'index'])
+    Route::get('/api/kegiatan', [KegiatanController::class, 'index'])
 
     // Rute Kegiatan
     Route::get('/admin/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
