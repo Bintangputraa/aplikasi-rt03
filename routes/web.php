@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/api/berita', function() {
         $Berita = Berita::orderBy('created_at', 'desc' )->get();
         return response()->json($Berita);
-    })
+    });
     Route::get('/admin/berita/tambah', [BeritaController::class, 'create'])->name('berita.create');
     Route::post('/admin/berita', [BeritaController::class, 'store'])->name('berita.store');
     Route::get('/api/album', [AlbumController::class, 'index']);
